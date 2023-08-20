@@ -1,0 +1,112 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #E8F8F5; /* Light green color for the entire body */
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Green header for users */
+.users-header {
+  background-color: #3EBF7F; /* Green color */
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 50px; /* Add 50px margin between user boxes */
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+  transition: color 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+
+/* Styles for the name box */
+.name-box {
+  display: flex;
+  margin: 50px;
+
+}
+
+/* New styles for the user boxes */
+.users {
+  /* ... Existing styles ... */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 -25px; /* Add a negative margin to create the gap on both sides */
+}
+
+.user-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.user-box {
+  width: 200px; /* Set the width to 200px */
+  height: 200px; /* Set the height to 200px */
+  margin-bottom: 50px;
+  background-color: #fff;
+  color: #333;
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  margin: 25px; /* Add a margin to create the gap on both sides */
+  transition: background-color 0.3s ease; /* Add a transition for the hover effect */
+}
+
+/* Set the font size to 30px for the text inside user boxes */
+.user-box .name-box {
+  font-size: 30px;
+  color: black;
+}
+
+/* Hover effect */
+.user-box:hover {
+  background-color: #2EC87E; /* Lighter green color on hover */
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}
