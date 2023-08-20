@@ -1,49 +1,72 @@
 {
-  "1": {
-    "name": "Alice",
-    "movies": [
-            {"id": 1, "title": "Movie 1"},
-            {"id": 2, "title": "Movie 2"},
-            {"id": 3, "title": "Movie 3"}
+    "1": {
+        "name": "Alice",
+        "movies": [
+            {
+                "id": 1,
+                "title": "Movie 1"
+            },
+            {
+                "id": 2,
+                "title": "Movie 2"
+            },
+            {
+                "id": 3,
+                "title": "Movie 3"
+            }
         ]
-  },
-  "2": {
-    "name": "Bob",
-    "movies": [
-            {"id": 4, "title": "Movie 4"},
-            {"id": 5, "title": "Movie 5"}
+    },
+    "2": {
+        "name": "Bob",
+        "movies": [
+            {
+                "id": 4,
+                "title": "Movie 4"
+            },
+            {
+                "id": 5,
+                "title": "Movie 5"
+            },
+            {
+                "id": 6,
+                "title": "Batman"
+            }
         ]
-  },
-  "3": {
-    "name": "Jorge",
-    "movies": {}
-  },
-  "4": {
-    "name": "Lucas",
-    "movies": {}
-  },
-  "5": {
-    "name": "Carol",
-    "movies": {}
-  },
-  "6": {
-    "name": "Bruno",
-    "movies": {}
-  },
-  "7": {
-    "name": "Alice",
-    "movies": {}
-  },
-  "8": {
-    "name": "Bob",
-    "movies": {}
-  },
-  "9": {
-    "name": "Alice",
-    "movies": {}
-  },
-  "10": {
-    "name": "Bob",
-    "movies": {}
-  }
+    },
+    "3": {
+        "name": "Jorge",
+        "movies": {}
+    },
+    "4": {
+        "name": "Lucas",
+        "movies": {}
+    },
+    "5": {
+        "name": "Carol",
+        "movies": {}
+    },
+    "6": {
+        "name": "Bruno",
+        "movies": {}
+    },
+    "7": {
+        "name": "Alice",
+        "movies": {}
+    },
+    "8": {
+        "name": "Bob",
+        "movies": {}
+    },
+    "9": {
+        "name": "Alice",
+        "movies": {}
+    },
+    "10": {
+        "name": "Bob",
+        "movies": {}
+    },
+    "11": {
+        "name": "Pedro",
+        "movies": []
+    }
 }

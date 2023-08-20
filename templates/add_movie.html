@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Movie - MovieWeb App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="users-header">
+        <h1>Add Movie for {{ user["name"] }}</h1>
+    </div>
+    <div class="add-movie-form">
+        <form method="post">
+            <label for="movie_title">Movie Title:</label>
+            <input type="text" id="movie_title" name="movie_title" required>
+            <button type="submit">Add Movie</button>
+        </form>
+    </div>
+</body>
+</html>

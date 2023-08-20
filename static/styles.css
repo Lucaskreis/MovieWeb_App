@@ -110,3 +110,42 @@ a:hover {
     font-size: 24px;
   }
 }
+
+/* user_movies*/
+.movies-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensure the card is centered vertically */
+}
+
+.card {
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 500px; /* Set the width to 500px */
+}
+
+.btn-container {
+    text-align: center;
+    margin-top: 10px;
+
+}
+
+.btn {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #3EBF7F;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    text-color: black
+    border: none;
+    cursor: pointer;
+}

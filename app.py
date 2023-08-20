@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 from data.JSONDataManager import JSONDataManager
 
 app = Flask(__name__)
@@ -18,10 +18,33 @@ def list_users():
 
 @app.route('/users/<user_id>')
 def user_movies(user_id):
-    movies = data_manager.get_user_movies(user_id)
+    user, movies = data_manager.get_user_movies(user_id)
     if movies is None:
         return "User not found"
-    return render_template('user_movies.html', user_id=user_id, movies=movies)
+    return render_template('user_movies.html', user=user, movies=movies, id=user_id)
+
+
+@app.route('/add_user', methods=['GET', 'POST'])
+def add_user():
+    if request.method == 'POST':
+        new_user_name = request.form['username']
+        data_manager.add_user(new_user_name)  # Implement this method in JSONDataManager
+        return redirect(url_for('list_users'))
+    return render_template('add_user.html')
+
+
+@app.route('/add_movie/<user_id>', methods=['GET', 'POST'])
+def add_movie(user_id):
+    user, _ = data_manager.get_user_movies(user_id)
+    if user is None:
+        return "User not found"
+
+    if request.method == 'POST':
+        movie_title = request.form['movie_title']
+        data_manager.add_movie_to_user(user_id, movie_title)  # Implement this method in JSONDataManager
+        return redirect(url_for('user_movies', user_id=user_id))
+
+    return render_template('add_movie.html', user=user)
 
 
 if __name__ == '__main__':
