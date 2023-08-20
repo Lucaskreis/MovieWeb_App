@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Movie - MovieWeb App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="users-header">
+        <h1>Update Movie for {{ user }}</h1>
+    </div>
+    <div class="update-movie-form">
+        <form method="post">
+            <label for="movie_title">Movie Title:</label>
+            <input type="text" id="movie_title" name="movie_title" value="{{ movie['title'] }}" required>
+            <button type="submit">Update Movie</button>
+        </form>
+    </div>
+</body>
+</html>

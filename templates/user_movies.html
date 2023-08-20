@@ -15,8 +15,8 @@
                 <div class="card">
                     {{ movie["title"] }}
                     <div class="btn-container">
-                        <a href="/users/{{ user['id'] }}/edit/{{ movie['id'] }}" class="btn">Edit</a>
-                        <a href="/users/{{ user['id'] }}/delete/{{ movie['id'] }}" class="btn">Delete</a>
+                        <a href="{{ url_for('update_movie', user_id=id, movie_id=movie['id']) }}" class="btn">Edit</a>
+                        <a href="{{ url_for('delete_movie', user_id=id, movie_id=movie['id']) }}" class="btn">Delete</a>
                     </div>
                 </div>
             </li>

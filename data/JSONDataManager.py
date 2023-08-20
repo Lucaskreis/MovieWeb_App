@@ -77,3 +77,38 @@ class JSONDataManager(DataManagerInterface):
             new_id += 1
 
         return new_id
+    #voltar nessa funcao de gerar id
+
+    def update_movie(self, user_id, movie_id, new_movie_title):
+        data = self.get_all_users()
+
+        if user_id in data:
+            movies = data[user_id]["movies"]
+            movie_to_update = next((movie for movie in movies if movie["id"] == int(movie_id)), None)
+
+            if movie_to_update:
+                movie_to_update["title"] = new_movie_title
+
+                with open(self.filename, "w") as file_obj:
+                    json.dump(data, file_obj, indent=4)
+            else:
+                raise ValueError("Movie not found")
+        else:
+            raise ValueError("User not found")
+
+    def delete_movie(self, user_id, movie_id):
+        data = self.get_all_users()
+
+        if user_id in data:
+            movies = data[user_id]["movies"]
+            movie_to_delete = next((movie for movie in movies if movie["id"] == int(movie_id)), None)
+
+            if movie_to_delete:
+                movies.remove(movie_to_delete)
+
+                with open(self.filename, "w") as file_obj:
+                    json.dump(data, file_obj, indent=4)
+            else:
+                raise ValueError("Movie not found")
+        else:
+            raise ValueError("User not found")

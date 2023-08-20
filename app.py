@@ -47,5 +47,36 @@ def add_movie(user_id):
     return render_template('add_movie.html', user=user)
 
 
+@app.route('/users/<user_id>/update_movie/<movie_id>', methods=['GET', 'POST'])
+def update_movie(user_id, movie_id):
+    user, movies = data_manager.get_user_movies(user_id)
+
+    if user is None:
+        return "User not found"
+
+    movie_to_update = next((movie for movie in movies if movie["id"] == int(movie_id)), None)
+
+    if movie_to_update is None:
+        return "Movie not found"
+
+    if request.method == 'POST':
+        new_movie_title = request.form['movie_title']
+        data_manager.update_movie(user_id, movie_id, new_movie_title)
+        return redirect(url_for('user_movies', user_id=user_id))
+
+    return render_template('update_movie.html', user=user, movie=movie_to_update)
+
+
+@app.route('/users/<user_id>/delete_movie/<movie_id>')
+def delete_movie(user_id, movie_id):
+    user, _ = data_manager.get_user_movies(user_id)
+
+    if user is None:
+        return "User not found"
+
+    data_manager.delete_movie(user_id, movie_id)
+    return redirect(url_for('user_movies', user_id=user_id))
+
+
 if __name__ == '__main__':
     app.run(debug=True)
