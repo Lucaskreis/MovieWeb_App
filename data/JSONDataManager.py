@@ -53,14 +53,17 @@ class JSONDataManager(DataManagerInterface):
         with open(self.filename, "w") as file_obj:
             json.dump(data, file_obj, indent=4)
 
-    def add_movie_to_user(self, user_id, movie_title):
+    def add_movie_to_user(self, user_id, movie_data):
         data = self.get_all_users()
 
         if user_id in data:
             new_movie_id = self.generate_unique_id(data[user_id]["movies"])
             new_movie = {
                 "id": new_movie_id,
-                "title": movie_title
+                "title": movie_data["Title"],
+                "poster": movie_data["Poster"],
+                "rating": movie_data["imdbRating"],
+                "year": movie_data["Year"]
             }
             data[user_id]["movies"].append(new_movie)
 

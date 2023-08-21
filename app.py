@@ -1,13 +1,16 @@
 from flask import Flask, render_template, request, redirect, url_for
 from data.JSONDataManager import JSONDataManager
+import requests
 
 app = Flask(__name__)
 data_manager = JSONDataManager('data/data.json')
 
+URL = "http://www.omdbapi.com/?apikey=19391c77&"
+
 
 @app.route('/')
 def home():
-    return "Welcome to MovieWeb App!"
+    return render_template('home.html')
 
 
 @app.route('/users')
@@ -41,7 +44,16 @@ def add_movie(user_id):
 
     if request.method == 'POST':
         movie_title = request.form['movie_title']
-        data_manager.add_movie_to_user(user_id, movie_title)  # Implement this method in JSONDataManager
+        # Fetch movie data from OMDB API
+        omdb_api_key = "19391c77"
+        omdb_api_url = f"http://www.omdbapi.com/?apikey={omdb_api_key}&t={movie_title}"
+        response = requests.get(omdb_api_url)
+        movie_data = response.json()
+
+        if "Error" in movie_data:
+            return f"Error: {movie_data['Error']}"
+
+        data_manager.add_movie_to_user(user_id, movie_data)
         return redirect(url_for('user_movies', user_id=user_id))
 
     return render_template('add_movie.html', user=user)
@@ -80,3 +92,12 @@ def delete_movie(user_id, movie_id):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+#corrigir edit e delete movie
+#Deletar user
+#Colocar poste do movie no card e adicionar mais infomaçoes no card
+#adicionar update com um form para cada info do update
+#CSV
+#Colocar funções novas no data_manager
+#Melhorar CSS das páginas
+#Fazer botão de home e users no cabaçalho

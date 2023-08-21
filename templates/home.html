@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to MovieWeb App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="welcome-header">
+        <h1>Welcome to MovieWeb App!</h1>
+    </div>
+    <div class="users-button">
+        <a href="{{ url_for('list_users') }}" class="btn">Go to Users</a>
+    </div>
+</body>
+</html>

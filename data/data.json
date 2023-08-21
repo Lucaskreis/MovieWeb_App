@@ -13,6 +13,10 @@
             {
                 "id": 3,
                 "title": "Movie 3"
+            },
+            {
+                "id": 4,
+                "title": "Batman"
             }
         ]
     },
@@ -26,6 +30,13 @@
             {
                 "id": 6,
                 "title": "Batman"
+            },
+            {
+                "id": 7,
+                "title": "Cars",
+                "poster": "https://m.media-amazon.com/images/M/MV5BMTg5NzY0MzA2MV5BMl5BanBnXkFtZTYwNDc3NTc2._V1_SX300.jpg",
+                "rating": "7.2",
+                "year": "2006"
             }
         ]
     },
@@ -63,6 +74,11 @@
     },
     "11": {
         "name": "Pedro",
-        "movies": []
+        "movies": [
+            {
+                "id": 1,
+                "title": "Cars"
+            }
+        ]
     }
 }
