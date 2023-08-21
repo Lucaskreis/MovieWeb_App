@@ -7,6 +7,10 @@
 <body>
     <div class="users-header">
         <h1>Update Movie for {{ user }}</h1>
+        <div class="header-buttons">
+            <a href="{{ url_for('home') }}" class="btn">Home</a>
+            <a href="{{ url_for('list_users') }}" class="btn">Go back to Users</a>
+        </div>
     </div>
     <div class="update-movie-form">
         <form method="post">

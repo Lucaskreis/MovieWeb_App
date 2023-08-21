@@ -3,20 +3,11 @@
         "name": "Alice",
         "movies": [
             {
-                "id": 1,
-                "title": "Movie 1"
-            },
-            {
-                "id": 2,
-                "title": "Movie 2"
-            },
-            {
-                "id": 3,
-                "title": "Movie 3"
-            },
-            {
-                "id": 4,
-                "title": "Batman"
+                "id": 5,
+                "title": "The Shining",
+                "poster": "https://m.media-amazon.com/images/M/MV5BZWFlYmY2MGEtZjVkYS00YzU4LTg0YjQtYzY1ZGE3NTA5NGQxXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+                "rating": "8.4",
+                "year": "1980"
             }
         ]
     },
@@ -24,60 +15,30 @@
         "name": "Bob",
         "movies": [
             {
-                "id": 4,
-                "title": "Movie 4"
-            },
-            {
-                "id": 6,
-                "title": "Batman"
-            },
-            {
                 "id": 7,
                 "title": "Cars",
                 "poster": "https://m.media-amazon.com/images/M/MV5BMTg5NzY0MzA2MV5BMl5BanBnXkFtZTYwNDc3NTc2._V1_SX300.jpg",
                 "rating": "7.2",
                 "year": "2006"
+            },
+            {
+                "id": 8,
+                "title": "Pulp Fiction",
+                "poster": "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+                "rating": "8.9",
+                "year": "1994"
             }
         ]
     },
     "3": {
-        "name": "Jorge",
-        "movies": {}
-    },
-    "4": {
         "name": "Lucas",
-        "movies": {}
-    },
-    "5": {
-        "name": "Carol",
-        "movies": {}
-    },
-    "6": {
-        "name": "Bruno",
-        "movies": {}
-    },
-    "7": {
-        "name": "Alice",
-        "movies": {}
-    },
-    "8": {
-        "name": "Bob",
-        "movies": {}
-    },
-    "9": {
-        "name": "Alice",
-        "movies": {}
-    },
-    "10": {
-        "name": "Bob",
-        "movies": {}
-    },
-    "11": {
-        "name": "Pedro",
         "movies": [
             {
                 "id": 1,
-                "title": "Cars"
+                "title": "Matrix",
+                "poster": "https://m.media-amazon.com/images/M/MV5BYzUzOTA5ZTMtMTdlZS00MmQ5LWFmNjEtMjE5MTczN2RjNjE3XkEyXkFqcGdeQXVyNTc2ODIyMzY@._V1_SX300.jpg",
+                "rating": "7.8",
+                "year": "1993"
             }
         ]
     }

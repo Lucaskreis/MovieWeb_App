@@ -93,7 +93,9 @@ def delete_movie(user_id, movie_id):
 if __name__ == '__main__':
     app.run(debug=True)
 
-#corrigir edit e delete movie
+
+#melhorar unique id
+#colocar o botao add movie para cima
 #Deletar user
 #Colocar poste do movie no card e adicionar mais infomaçoes no card
 #adicionar update com um form para cada info do update
