@@ -22,16 +22,18 @@ def list_users():
 @app.route('/users/<user_id>')
 def user_movies(user_id):
     user, movies = data_manager.get_user_movies(user_id)
-    if movies is None:
+
+    if user is None:
         return "User not found"
-    return render_template('user_movies.html', user=user, movies=movies, id=user_id)
+
+    return render_template('user_movies.html', user=user, movies=movies)
 
 
 @app.route('/add_user', methods=['GET', 'POST'])
 def add_user():
     if request.method == 'POST':
         new_user_name = request.form['username']
-        data_manager.add_user(new_user_name)  # Implement this method in JSONDataManager
+        data_manager.add_user(new_user_name)
         return redirect(url_for('list_users'))
     return render_template('add_user.html')
 
@@ -72,11 +74,25 @@ def update_movie(user_id, movie_id):
         return "Movie not found"
 
     if request.method == 'POST':
-        new_movie_title = request.form['movie_title']
-        data_manager.update_movie(user_id, movie_id, new_movie_title)
+        updated_movie = {
+            "title": request.form['title'],
+            "poster": request.form['poster'],
+            "rating": request.form['rating'],
+            "year": request.form['year']
+        }
+        data_manager.update_movie(user_id, movie_id, updated_movie)
         return redirect(url_for('user_movies', user_id=user_id))
 
     return render_template('update_movie.html', user=user, movie=movie_to_update)
+
+
+@app.route('/users/<user_id>/delete_user')
+def delete_user(user_id):
+    try:
+        data_manager.delete_user(user_id)
+        return redirect(url_for('list_users'))
+    except ValueError as e:
+        return f"Error: {str(e)}"
 
 
 @app.route('/users/<user_id>/delete_movie/<movie_id>')
@@ -97,9 +113,8 @@ if __name__ == '__main__':
 #melhorar unique id
 #colocar o botao add movie para cima
 #Deletar user
-#Colocar poste do movie no card e adicionar mais infomaçoes no card
 #adicionar update com um form para cada info do update
 #CSV
 #Colocar funções novas no data_manager
 #Melhorar CSS das páginas
-#Fazer botão de home e users no cabaçalho
+
