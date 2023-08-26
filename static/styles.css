@@ -63,7 +63,6 @@ a:hover {
 
 /* New styles for the user boxes */
 .users {
-  /* ... Existing styles ... */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -140,14 +139,17 @@ a:hover {
 
 .btn {
     display: inline-block;
-    padding: 5px 10px;
     background-color: #3EBF7F;
-    color: #fff;
+    color: black;
     text-align: center;
     text-decoration: none;
     text-color: black
     border: none;
     cursor: pointer;
+    margin:20px;
+    border-radius: 8px;
+    font-weight: bold;
+    padding: 10px 20px;
 }
 
 .movie-poster {
@@ -155,4 +157,89 @@ a:hover {
     height: 300px; /* Adjust the height as needed */
     background-size: cover;
     background-position: center;
+}
+
+.welcome-header {
+    margin: 70px
+}
+
+.title {
+    font-size: 45px; /* Adjust the font size as needed */
+    font-weight: bold; /* Optionally set the font weight */
+    text-align: center; /* Center align the title */
+    margin-bottom: 20px; /* Add some spacing below the title */
+}
+
+.users-button {
+    display:flex;
+    justify-content: center;
+    }
+
+.image-section {
+    text-align: center;
+    margin-top: 20px;
+    margin:25px;
+}
+
+.image-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.image-container {
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid #ccc;
+}
+
+.user-container{
+    margin: 50px 250px;
+}
+
+
+/* Style the Home button */
+.btn-home {
+    background-color: #2ecc71; /* Change to your preferred color */
+    color: white; /* Set text color for the button */
+    border-radius: 8px; /* Round edges */
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+/* Adjust width and layout of user cards */
+.user-card {
+    background-color: #2ecc71;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    width: calc(45% - 40px); /* Set width for one card in a row */
+    display: inline-block; /* Display cards in a row */
+    vertical-align: top; /* Align cards at the top */
+}
+.user_name {
+    display:flex;
+    justify-content: center;
+    }
+
+/* Style the "View Movies" button */
+.btn-view {
+    display:flex;
+    justify-content: center;
+    background-color: #E8F8F5; /* Change to your preferred color */
+    color: black; /* Set text color for the button */
+    border-radius: 8px; /* Round edges */
+    padding: 8px 15px;
+    text-decoration: none;
 }

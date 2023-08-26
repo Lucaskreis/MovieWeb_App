@@ -5,20 +5,19 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <div class="users-header">
-        <h1>Users</h1>
-        <div class="header-buttons">
-            <a href="{{ url_for('home') }}" class="btn">Home</a>
-            <a href="{{ url_for('list_users') }}" class="btn">Go back to Users</a>
-        </div>
+    <div>
+        <h1 class="title">Users</h1>
     </div>
-    <div class="users">
-        <div class="user-row">
+    <div class="user-container">
+        <div class="header-buttons">
+            <a href="{{ url_for('home') }}" class="btn">HOME</a>
+            <!--<a href="{{ url_for('list_users') }}" class="btn">Go back to Users</a>-->
+        </div>
+        <div class="users-list">
             {% for user in users %}
-            <div class="user-box">
-                <a href="/users/{{ user.id }}">
-                    <div class="name-box">{{ user.name }}</div>
-                </a>
+            <div class="user-card">
+                <h2 class="user_name"> {{ user["name"] }}</h2>
+                <a href="{{ url_for('user_movies', user_id=user['id']) }}" class="btn btn-view">View Movies</a>
             </div>
             {% endfor %}
         </div>
