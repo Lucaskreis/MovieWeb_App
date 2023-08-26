@@ -110,8 +110,7 @@ if __name__ == '__main__':
 
 
 #melhorar unique id
-#CSV
-#Colocar funções novas no data_manager
+#conferir csv para o meu nivel
 #eliminar classes inuteis de css
 
 
