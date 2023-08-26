@@ -26,7 +26,7 @@ def user_movies(user_id):
     if user is None:
         return "User not found"
 
-    return render_template('user_movies.html', user=user, movies=movies)
+    return render_template('user_movies.html', user_id=user_id, user=user, movies=movies)
 
 
 @app.route('/add_user', methods=['GET', 'POST'])
@@ -76,7 +76,6 @@ def update_movie(user_id, movie_id):
     if request.method == 'POST':
         updated_movie = {
             "title": request.form['title'],
-            "poster": request.form['poster'],
             "rating": request.form['rating'],
             "year": request.form['year']
         }
@@ -111,10 +110,8 @@ if __name__ == '__main__':
 
 
 #melhorar unique id
-#colocar o botao add movie para cima
-#Deletar user
-#adicionar update com um form para cada info do update
 #CSV
 #Colocar funções novas no data_manager
-#Melhorar CSS das páginas
+#eliminar classes inuteis de css
+
 

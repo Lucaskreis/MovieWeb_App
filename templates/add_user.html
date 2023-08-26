@@ -5,19 +5,22 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <div class="users-header">
-        <h1>Add User</h1>
+    <div>
+        <h1 class="title">Add User</h1>
+    </div>
+    <div class="user-container">
         <div class="header-buttons">
-            <a href="{{ url_for('home') }}" class="btn">Home</a>
-            <a href="{{ url_for('list_users') }}" class="btn">Go back to Users</a>
+            <a href="{{ url_for('home') }}" class="btn">HOME</a>
+            <a href="{{ url_for('list_users') }}" class="btn">BACK TO USERS</a>
+        </div>
+        <div class="add-user-form">
+            <form method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <button type="submit">Add User</button>
+            </form>
         </div>
     </div>
-    <div class="add-user-form">
-        <form method="post">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            <button type="submit">Add User</button>
-        </form>
-    </div>
+
 </body>
 </html>

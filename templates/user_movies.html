@@ -5,36 +5,40 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <div class="users-header">
-        <h1>{{ user }}</h1>
+    <div>
+        <h1 class="title">{{ user }}</h1>
+    </div>
+    <div class="user-container">
         <div class="header-buttons">
-            <a href="{{ url_for('home') }}" class="btn">Home</a>
-            <a href="{{ url_for('list_users') }}" class="btn">Go back to Users</a>
+            <a href="{{ url_for('home') }}" class="btn">HOME</a>
+            <a href="{{ url_for('list_users') }}" class="btn">BACK TO USERS</a>
+        </div>
+
+        <div class="movies-list">
+            <ul class="list-of-cards">
+                {% for movie in movies %}
+                 <li>
+                    <div class="card">
+                        <div class="movie-poster" style="background-image: url('{{ movie['poster'] }}');"></div>
+                        <div class="movie-details">
+                            <p class="movie-title">{{ movie["title"] }}</p>
+                            <p class="movie-rating">Rating: {{ movie["rating"] }}</p>
+                            <p class="movie-year">Year: {{ movie["year"] }}</p>
+                        </div>
+                        <div class="btn-container">
+                            <a href="{{ url_for('update_movie', user_id=user_id, movie_id=movie['id']) }}" class="btn">Edit</a>
+                            <a href="{{ url_for('delete_movie', user_id=user_id, movie_id=movie['id']) }}" class="btn">Delete</a>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="add-movie-button">
+            <a href="{{ url_for('add_movie', user_id=user_id) }}" class="btn">ADD MOVIE</a>
+            <a href="{{ url_for('delete_user', user_id=user_id) }}" class="btn btn-delete">DELETE USER</a>
         </div>
     </div>
-    <div class="movies-list">
-        <ul>
-            {% for movie in movies %}
-             <li>
-                <div class="card">
-                    <div class="movie-poster" style="background-image: url('{{ movie['poster'] }}');"></div>
-                    <div class="movie-details">
-                        <p class="movie-title">{{ movie["title"] }}</p>
-                        <p class="movie-rating">Rating: {{ movie["rating"] }}</p>
-                        <p class="movie-year">Year: {{ movie["year"] }}</p>
-                    </div>
-                    <div class="btn-container">
-                        <a href="{{ url_for('update_movie', user_id= id, movie_id=movie['id']) }}" class="btn">Edit</a>
-                        <a href="{{ url_for('delete_movie', user_id= id, movie_id=movie['id']) }}" class="btn">Delete</a>
-                    </div>
-                </div>
-            </li>
-            {% endfor %}
-        </ul>
-    </div>
-    <div class="add-movie-button">
-        <a href="{{ url_for('add_movie', user_id=id) }}" class="btn">Add Movie</a>
-        <a href="{{ url_for('delete_user', user_id=id) }}" class="btn btn-delete">Delete User</a>
-    </div>
+
 </body>
 </html>

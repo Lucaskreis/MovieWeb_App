@@ -2,8 +2,6 @@ import json
 from .data_manager import DataManagerInterface
 
 
-# trocar o nome do arquivo e cuidar o caminho dos diretórios
-
 class JSONDataManager(DataManagerInterface):
     def __init__(self, filename):
         self.filename = filename
@@ -33,7 +31,7 @@ class JSONDataManager(DataManagerInterface):
 
         return users_list
 
-    def add_user(self,username):
+    def add_user(self, username):
         data = self.get_all_users()
 
         # Generate a new user ID that is unique
@@ -80,7 +78,8 @@ class JSONDataManager(DataManagerInterface):
             new_id += 1
 
         return new_id
-    #voltar nessa funcao de gerar id
+
+    # voltar nessa funcao de gerar id
 
     def update_movie(self, user_id, movie_id, updated_movie):
         data = self.get_all_users()
@@ -107,7 +106,6 @@ class JSONDataManager(DataManagerInterface):
                 json.dump(data, file_obj, indent=4)
         else:
             raise ValueError("User not found")
-
 
     def delete_movie(self, user_id, movie_id):
         data = self.get_all_users()
